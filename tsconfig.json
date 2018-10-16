@@ -1,26 +1,25 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "pretty": true,
     "allowJs": false,
-    "sourceMap": true,
-    "removeComments": true,
-    "strict": true,
+    "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
-    "strictNullChecks": true,
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "skipLibCheck": true,
-    "noImplicitReturns": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "rootDir": ".",
-    "baseUrl": ".",
     "paths": {
       "*": ["types/*", "*"]
-    }
+    },
+    "pretty": true,
+    "rootDir": ".",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "esnext"
   }
 }

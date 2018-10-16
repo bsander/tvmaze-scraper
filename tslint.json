@@ -6,6 +6,7 @@
     "import-name": false, // Broken: https://github.com/Microsoft/tslint-microsoft-contrib/issues/378
     "object-literal-sort-keys": false, // Needs auto-fixer
     "no-unused-expression": [true, "allow-fast-null-checks"],
-    "no-console": true // Here for debug purposes; Must remain true
+    "variable-name": [true, "ban-keywords", "allow-leading-underscore"],
+    "no-console": false
   }
 }

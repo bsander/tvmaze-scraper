@@ -1,3 +1,6 @@
+import * as DotEnv from 'dotenv'
+DotEnv.config()
+
 import Hapi from 'hapi'
 import { routes as showRoutes } from './shows'
 
@@ -10,7 +13,7 @@ const run = async () => {
   server.route(showRoutes)
 
   await server.start()
-  console.info(`Try it out at ${server.info.uri}/shows?page=1`)
+  console.info(`Try it out at ${server.info.uri}/shows/1`)
 }
 
 run()

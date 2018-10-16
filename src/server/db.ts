@@ -1,11 +1,19 @@
 import { Pool } from 'pg'
 
+const {
+  DB_HOST,
+  DB_PORT,
+  DB_USER,
+  DB_DATABSE,
+  DB_PASSWORD,
+} = process.env as any // time-related shortcut for not dealing with all values in process.env being optional
+
 const db = new Pool({
-  host: 'localhost',
-  user: 'tvmaze_app',
-  database: 'tvmaze_content',
-  password: 'tvmaze',
-  port: 5432,
+  host: DB_HOST,
+  user: DB_USER,
+  database: DB_DATABSE,
+  password: DB_PASSWORD,
+  port: DB_PORT,
 })
 
 export const getShows = async (limit: number, offset: number) =>

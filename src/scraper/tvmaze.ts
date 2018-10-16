@@ -19,30 +19,21 @@ const castListSchema = Joi.array().items(
       birthday: Joi.string()
         .allow(null)
         .default(null),
-      // birthday: Joi.date().allow(null).default(null),
     }).unknown(),
   }).unknown(),
 )
 
 const isShowList = (input: any): input is TVMaze.ShowList => {
   const result = Joi.validate(input, showListSchema)
-  // if (result.error) {
-  //   console.error({ input, result })
-  // }
   return result.error == null
 }
 
 const isCastList = (input: any): input is TVMaze.CastList => {
   const result = Joi.validate(input, castListSchema)
-  // if (result.error) {
-  //   console.error({ input: input[0], result })
-  // }
   return result.error == null
 }
 
-export const getShowList = async (
-  page: number = 0,
-): Promise<TVMaze.ShowList> => {
+export const getShowList = async (page: number): Promise<TVMaze.ShowList> => {
   const url = `${TVMAZE_ROOT}/shows?page=${page}`
   const parsedResponse = await fetch(url)
   if (!isShowList(parsedResponse)) {

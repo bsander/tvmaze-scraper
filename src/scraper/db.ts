@@ -1,12 +1,20 @@
 import { Pool } from 'pg'
 import { TVMaze } from '../../types/TVMaze'
 
+const {
+  DB_HOST,
+  DB_PORT,
+  DB_USER,
+  DB_DATABSE,
+  DB_PASSWORD,
+} = process.env as any // time-related shortcut for not dealing with all values in process.env being optional
+
 const db = new Pool({
-  host: 'localhost',
-  user: 'tvmaze_app',
-  database: 'tvmaze_content',
-  password: 'tvmaze',
-  port: 5432,
+  host: DB_HOST,
+  user: DB_USER,
+  database: DB_DATABSE,
+  password: DB_PASSWORD,
+  port: DB_PORT,
 })
 
 export const insertShow = async (show: TVMaze.Show): Promise<void> => {
@@ -30,7 +38,7 @@ export const insertCastForShow = async (
         [id, name, birthday],
       )
       await db.query(
-        'INSERT INTO public.show_cast (show_id, cast_id) VALUES ($1, $2) ON CONFLICT DO NOTHING',
+        'INSERT INTO public.show_cast (show_id, cast_id) VALUES ($1, $2) ON CONFLICT (show_id, cast_id) DO NOTHING',
         [showId, id],
       )
     }),

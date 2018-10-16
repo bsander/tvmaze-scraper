@@ -1,0 +1,35 @@
+{
+  "name": "scraper-excercise",
+  "version": "1.0.0",
+  "description": "POC scraper for TVMaze API",
+  "main": "index.js",
+  "author": "Sander Bouwhuis <sander.bouwhuis@reaktor.com>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "nodemon",
+    "scrape": "ts-node src/scraper/scraper.ts"
+  },
+  "dependencies": {
+    "@types/hapi": "^17.6.1",
+    "@types/node-fetch": "^2.1.2",
+    "@types/p-queue": "^2.3.1",
+    "@types/p-retry": "^2.0.0",
+    "@types/pg": "^7.4.11",
+    "@types/ramda": "^0.25.39",
+    "hapi": "^17.6.0",
+    "joi": "^14.0.0",
+    "node-fetch": "^2.2.0",
+    "p-queue": "^3.0.0",
+    "p-retry": "^2.0.0",
+    "pg": "^7.5.0",
+    "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^3.1.3"
+  }
+}
